@@ -38,6 +38,7 @@ public class GameEngine extends SurfaceView implements Runnable {
 
     Player player;
     Item item1;
+    Item item2;
 
     // -----------------------------------
     // GAME SPECIFIC VARIABLES
@@ -68,6 +69,7 @@ public class GameEngine extends SurfaceView implements Runnable {
 
         this.player = new Player(getContext(), 1500,500 );
         this.item1=new Item(getContext(),250,40);
+        this.item2=new Item(getContext(),500,40);
 
     }
 
@@ -159,6 +161,9 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             canvas.drawBitmap(player.getImage(), player.getxPosition(), player.getyPosition(), paintbrush);
             canvas.drawBitmap(item1.getImage(),item1.getxPosition(),item1.getyPosition(),paintbrush);
+            canvas.drawBitmap(item2.getImage2(),item2.getxPosition(),item2.getyPosition(),paintbrush);
+            canvas.drawBitmap(item1.getImage(),item1.getxPosition(),item1.getyPosition()+380,paintbrush);
+            canvas.drawBitmap(item2.getImage2(),item2.getxPosition(),item2.getyPosition()+380,paintbrush);
             paintbrush.setColor(Color.GREEN);
 
 
