@@ -40,7 +40,7 @@ public class GameEngine extends SurfaceView implements Runnable {
     Item item1;
     Item item2;
 
-    int lives=0;
+    int lives=3;
     int score=0;
 
     // -----------------------------------
@@ -73,7 +73,6 @@ public class GameEngine extends SurfaceView implements Runnable {
         this.player = new Player(getContext(), 1500,500 );
         this.item1=new Item(getContext(),250,40);
         this.item2=new Item(getContext(),500,40);
-
 
     }
 
@@ -165,12 +164,14 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             player.setyPosition(200);
             player.setxPosition(1500);
+            player.updateHitbox();
            // player.updateHitbox();
         }
         else if (this.fingerAction == "Bottomhalf") {
             // if mouseup, then move player down
             player.setyPosition(400);
             player.setxPosition(1500);
+            player.updateHitbox();
            // player.updateHitbox(1500);
         }
 
@@ -200,8 +201,6 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             paintbrush.setColor(Color.GREEN);
             canvas.drawRect(player.getHitbox(), paintbrush);
-
-
             canvas.drawRect(25,300,1200,220,paintbrush);
             //canvas.drawRect(25,500,1200,400,paintbrush);
             canvas.drawRect(25,700,1200,600,paintbrush);
@@ -222,8 +221,6 @@ public class GameEngine extends SurfaceView implements Runnable {
                     800,
                     paintbrush
             );
-
-
 
 
             // DRAW THE PLAYER HITBOX
@@ -266,8 +263,6 @@ public class GameEngine extends SurfaceView implements Runnable {
             {
                 fingerAction="Bottomhalf";
             }
-
-
 
             return true;
         }
