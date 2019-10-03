@@ -155,7 +155,16 @@ Player player;
 
 
             canvas.drawBitmap(player.getImage(), player.getxPosition(), player.getyPosition(), paintbrush);
-            canvas.drawRect();
+            paintbrush.setColor(Color.GREEN);
+
+
+            canvas.drawRect(25,300,1200,220,paintbrush);
+            //canvas.drawRect(25,500,1200,400,paintbrush);
+            canvas.drawRect(25,700,1200,600,paintbrush);
+            canvas.drawRect(25,1100,1200,1000,paintbrush);
+//            canvas.drawRect(25,250,1200,220,paintbrush);
+
+
 
 
 
