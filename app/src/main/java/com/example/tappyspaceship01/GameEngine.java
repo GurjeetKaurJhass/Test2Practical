@@ -40,6 +40,9 @@ public class GameEngine extends SurfaceView implements Runnable {
     Item item1;
     Item item2;
 
+    int lives=0;
+    int score=0;
+
     // -----------------------------------
     // GAME SPECIFIC VARIABLES
     // -----------------------------------
@@ -159,6 +162,7 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             //----------------
 
+
             // configure the drawing tools
             this.canvas.drawColor(Color.argb(255,255,255,255));
             paintbrush.setColor(Color.WHITE);
@@ -178,6 +182,20 @@ public class GameEngine extends SurfaceView implements Runnable {
             canvas.drawRect(25,1100,1200,1000,paintbrush);
 //            canvas.drawRect(25,250,1200,220,paintbrush);
 
+            paintbrush.setColor(Color.BLACK);
+            paintbrush.setTextSize(60);
+            canvas.drawText("Lives remaining: " + lives,
+                    1100,
+                    800,
+                    paintbrush
+            );
+
+            paintbrush.setTextSize(60);
+            canvas.drawText("Lives remaining: " + score,
+                    500,
+                    800,
+                    paintbrush
+            );
 
 
 
