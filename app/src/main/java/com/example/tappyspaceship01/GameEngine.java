@@ -133,19 +133,23 @@ public class GameEngine extends SurfaceView implements Runnable {
 //        this.item2.setxPosition(this.item2.getxPosition() + 25);
         if(item1.getxPosition()<=this.screenWidth) {
             this.item1.setxPosition(this.item1.getxPosition() + 25);
+            this.item1.updateHitbox();
         }
         else
         {
             this.item1.setxPosition(250);
+            this.item1.updateHitbox();
         }
 
 
         if(item2.getxPosition()<=this.screenWidth) {
             this.item2.setxPosition(this.item2.getxPosition() + 25);
+            this.item2.updateHitbox();
         }
         else
         {
             this.item2.setxPosition(500);
+            this.item2.updateHitbox();
 
         }
 
@@ -175,9 +179,6 @@ public class GameEngine extends SurfaceView implements Runnable {
            // player.updateHitbox(1500);
         }
 
-
-
-
     }
 
     public void redrawSprites() {
@@ -201,6 +202,8 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             paintbrush.setColor(Color.GREEN);
             canvas.drawRect(player.getHitbox(), paintbrush);
+            canvas.drawRect(item1.getHitbox(),paintbrush);
+            canvas.drawRect(item2.getHitbox(),paintbrush);
             canvas.drawRect(25,300,1200,220,paintbrush);
             //canvas.drawRect(25,500,1200,400,paintbrush);
             canvas.drawRect(25,700,1200,600,paintbrush);

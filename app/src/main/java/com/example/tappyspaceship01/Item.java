@@ -36,9 +36,6 @@ public class Item {
     }
 
 
-
-
-
     public Bitmap getImage2() {
         return image2;
     }
@@ -46,6 +43,15 @@ public class Item {
     public void setImage2(Bitmap image2) {
         this.image2 = image2;
     }
+
+    public void updateHitbox() {
+        this.hitbox.left = this.xPosition;
+        this.hitbox.top = this.yPosition;
+        this.hitbox.right = this.xPosition + this.image.getWidth();
+        this.hitbox.bottom = this.yPosition + this.image.getHeight();
+    }
+
+
 // Getter and setters
     // Autogenerate this by doing Right Click --> Generate --> Getter&Setter
 
@@ -81,3 +87,6 @@ public class Item {
         this.yPosition = yPosition;
     }
 }
+
+
+
