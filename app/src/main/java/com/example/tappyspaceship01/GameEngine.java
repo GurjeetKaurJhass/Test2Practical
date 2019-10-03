@@ -130,8 +130,33 @@ public class GameEngine extends SurfaceView implements Runnable {
 
     public void updatePositions() {
 
-        this.item1.setxPosition(this.item1.getxPosition()+25);
-        this.item2.setxPosition(this.item2.getxPosition()+25);
+
+//        this.item2.setxPosition(this.item2.getxPosition() + 25);
+        if(item1.getxPosition()<=this.screenWidth) {
+            this.item1.setxPosition(this.item1.getxPosition() + 25);
+        }
+        else
+        {
+            this.item1.setxPosition(250);
+
+
+        }
+
+
+        if(item2.getxPosition()<=this.screenWidth) {
+            this.item2.setxPosition(this.item2.getxPosition() + 25);
+        }
+        else
+        {
+            this.item2.setxPosition(500);
+
+        }
+
+
+
+//        if(item2.getxPosition()<=this.screenWidth) {
+//
+//        }
 
 
         if (this.fingerAction == "Tophalf") {
