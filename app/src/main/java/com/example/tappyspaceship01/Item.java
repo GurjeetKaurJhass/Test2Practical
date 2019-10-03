@@ -35,6 +35,10 @@ public class Item {
         );
     }
 
+
+
+
+
     public Bitmap getImage2() {
         return image2;
     }

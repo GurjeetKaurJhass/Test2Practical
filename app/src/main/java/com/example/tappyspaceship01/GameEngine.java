@@ -71,6 +71,7 @@ public class GameEngine extends SurfaceView implements Runnable {
         this.item1=new Item(getContext(),250,40);
         this.item2=new Item(getContext(),500,40);
 
+
     }
 
 
@@ -125,6 +126,10 @@ public class GameEngine extends SurfaceView implements Runnable {
     // ------------------------------
 
     public void updatePositions() {
+
+        this.item1.setxPosition(this.item1.getxPosition()+25);
+        this.item2.setxPosition(this.item2.getxPosition()+25);
+
 
         if (this.fingerAction == "Tophalf") {
             // if mousedown, then move player up
